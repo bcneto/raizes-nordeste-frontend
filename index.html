@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rede Raízes do Nordeste</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+<div id="lgpd-banner" class="lgpd-banner">
+<p>Utilizamos cookies e dados de navegação para melhorar sua experiência e personalizar nossas promoções conforme a LGPD. Você concorda com os nossos termos?</p>
+<button id="btn-aceitar-lgpd" class="btn-secundario">Aceitar e Continuar</button>
+</div>
+<header class="header">
+<div class="logo">
+<h1>Raízes do Nordeste</h1>
+<p>Tradição e Sabor Regional</p>
+</div>
+<div class="unidade-box">
+<label for="select-unidade">Unidade:</label>
+<select id="select-unidade">
+<option value="recife">Recife - Matriz Boa Viagem (Cozinha Completa)</option>
+<option value="salvador">Salvador - Shopping Barra (Formato Express)</option>
+<option value="campina">Campina Grande - Centro (Cardápio Especial Junino)</option>
+</select>
+</div>
+</header>
+<section class="info-canal">
+<span class="badge">Canal: Web / Autoatendimento</span>
+<span class="badge" id="pontos-fidelidade">Seus Pontos: 0 pts</span>
+</section>
+
+<main class="container">
+<section class="cardapio-section">
+<h2>Cardápio Disponível</h2>
+<div id="grid-produtos" class="grid-produtos">
+
+<!-- os produtos são carregados via javascript com script.js -->
+
+</div>
+</section>
+
+<aside class="carrinho-section">
+<h2>Seu Pedido</h2>
+<ul id="lista-carrinho" class="lista-carrinho">
+<li class="carrinho-vazio">Carrinho vazio</li>
+</ul>
+      
+<div class="resumo-carrinho">
+<p>Total: <strong>R$ <span id="total-carrinho">0,00</span></strong></p>
+<label for="cliente-nome">Nome do Cliente:</label>
+<input type="text" id="cliente-nome" placeholder="Digite seu nome">
+
+<label for="cliente-telefone">Telefone:</label>
+<input type="text" id="cliente-telefone" placeholder="(81) 90123-4567" maxlength="15">
+
+<label for="cliente-cpf">CPF (Fidelidade/Nota):</label>
+<input type="text" id="cliente-cpf" placeholder="000.000.000-00" maxlength="14">
+
+<label style="margin-top: 15px; display: block; font-weight: bold; font-size: 0.85rem;">Forma de Pagamento:</label>
+<div style="display: flex; gap: 15px; margin-top: 5px; font-size: 0.9rem;">
+<label><input type="radio" name="pagamento" value="PIX" checked> Pix</label>
+<label><input type="radio" name="pagamento" value="Cartão"> Cartão</label>
+</div>
+
+<div class="consentimento-box">
+<input type="checkbox" id="check-fidelidade">
+<label for="check-fidelidade">Desejo acumular pontos nesta compra (Consentimento LGPD)</label>
+</div>
+
+<button id="btn-pagamento" class="btn-principal" onclick="processarPagamento()">Ir para Pagamento</button>
+</div>
+
+<div id="status-box" class="status-box hidden">
+<h3>Status do Pedido</h3>
+<p id="status-texto">Aguardando confirmação...</p>
+<div id="status-detalhe"></div>
+</div>
+</aside>
+</main>
+
+<footer class="footer">
+<p>&copy; 2026 Raízes do Nordeste - Todos os direitos reservados. RU: 4994750</p>
+</footer>
+</body>
+</html>
